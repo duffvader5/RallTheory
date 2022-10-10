@@ -2,7 +2,7 @@
 
 #required Import-Module Az.ResourceGraph
 
-#Resource Graph Query to find all Broken Extensions and sort them va the Server Name
+#Resource Graph Query into Powershell to find all Broken Extensions and sort them va the Server Name
 $vmsBrokenExtensions = Search-AzGraph -Query 'resources
 | where type == "microsoft.compute/virtualmachines/extensions" and properties.provisioningState != "Succeeded"
 | extend 
